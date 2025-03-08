@@ -7,7 +7,6 @@ namespace TodoApplication.Services
     {
 
         private readonly List<TodoItem> _todoList = new();
-        private int _nextId = 1;
 
         public List<TodoItem> GetAll()
         {
@@ -15,7 +14,7 @@ namespace TodoApplication.Services
         }
         public TodoItem GetById(int id)
         {
-            return _todoList.FirstOrDefault(t => t.Id == id);
+             return _todoList.FirstOrDefault(t => t.Id == id);
         }
 
         public void Add(TodoItem item)
