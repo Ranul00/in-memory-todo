@@ -25,7 +25,7 @@ git clone https://github.com/Ranul00/in-memory-todo.git
 
 ### 2. Navigate to the Project Directory
 ```
-cd in-memory-todo
+cd in-memory-todo/TodoApplication
 ```
 
 ### 3. Restore Dependencies
