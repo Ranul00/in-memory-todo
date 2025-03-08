@@ -20,4 +20,12 @@
         </div>
     }
     <button type="submit" class="btn btn-success">Save</button>
+    <a href="@Url.Action("Index", "Todo")" class="btn btn-secondary">Cancel</a>
 </form>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
