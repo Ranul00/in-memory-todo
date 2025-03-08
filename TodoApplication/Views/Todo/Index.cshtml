@@ -1,5 +1,26 @@
 ﻿@model List<TodoItem>
 
+<head>
+    <style>
+        .status-chip {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .completed {
+            background-color: green;
+        }
+
+        .pending {
+            background-color: grey;
+        }
+    </style>
+</head>
+
 <h2>To-Do List</h2>
 
 <a href="@Url.Action("Create")" class="btn btn-primary">Add Task</a>
@@ -18,7 +39,13 @@
         {
             <tr>
                 <td>@item.Title</td>
-                <td>@(item.IsCompleted ? "Completed" : "Pending")</td>
+                <td>
+                    <div @item.IsCompleted>
+                        <span class="status-chip @(item.IsCompleted ? "completed" : "pending")">
+                            @(item.IsCompleted ? "Completed" : "Pending")
+                        </span>
+                    </div>
+                </td>
                 <td>@item.CreatedDate.ToString("yyyy-MM-dd HH:mm")</td>
                 <td>
                     <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-warning">Edit</a>
